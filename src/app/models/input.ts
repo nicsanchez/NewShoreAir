@@ -1,6 +1,6 @@
 export interface Input {
   title?: string;
-  description?: string;
+  placeholder?: string;
   iconClass?: string;
-  errors?: any;
+  formControlObj?: any;
 }

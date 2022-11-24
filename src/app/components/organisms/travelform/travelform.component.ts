@@ -8,22 +8,9 @@ import { Input } from 'src/app/models/input';
   styleUrls: ['./travelform.component.scss'],
 })
 export class TravelformComponent implements OnInit {
-  public originInput: Input = {
-    title: 'Origen',
-    description: 'Ingrese el origen el viaje',
-    iconClass: 'form-input__icon--pin',
-  };
-
-  public destinationInput: Input = {
-    title: 'Destino',
-    description: 'Ingrese el destino el viaje',
-    iconClass: 'form-input__icon--visit',
-  };
-
-  public travelForm: FormGroup = this.formBuilder.group({
-    origin: ['', [Validators.required]],
-    destination: ['', [Validators.required]],
-  });
+  public originInput: Input = {};
+  public destinationInput: Input = {};
+  public travelForm: FormGroup = this.formBuilder.group({});
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -38,6 +25,7 @@ export class TravelformComponent implements OnInit {
         '',
         [
           Validators.required,
+          Validators.minLength(3),
           Validators.maxLength(3),
           Validators.pattern('^[A-Z]+$'),
         ],
@@ -46,6 +34,7 @@ export class TravelformComponent implements OnInit {
         '',
         [
           Validators.required,
+          Validators.minLength(3),
           Validators.maxLength(3),
           Validators.pattern('^[A-Z]+$'),
         ],
@@ -56,20 +45,18 @@ export class TravelformComponent implements OnInit {
   private setInputInformation() {
     this.originInput = {
       title: 'Origen',
-      description: 'Ingrese el origen el viaje',
+      placeholder: 'Ingrese el origen el viaje',
       iconClass: 'form-input__icon--pin',
-      errors: this.travelForm.controls['origin'].errors,
     };
 
     this.destinationInput = {
       title: 'Destino',
-      description: 'Ingrese el destino el viaje',
+      placeholder: 'Ingrese el destino el viaje',
       iconClass: 'form-input__icon--visit',
-      errors: this.travelForm.controls['destination'].errors,
     };
   }
 
-  onClickButton() {
+  onClickButton() { 
     if (this.travelForm.valid) {
       if (this.validateInputs()) {
         console.log('válido');

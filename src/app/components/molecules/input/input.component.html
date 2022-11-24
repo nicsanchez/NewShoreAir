@@ -1,0 +1,8 @@
+<app-form-input
+  [value]="value"
+  [data]="data"
+  [isValid]="isValid"
+  (input)="onInput($event.target.value)"
+  (click)="onClicked()"
+></app-form-input>
+<app-input-error *ngIf="isValid" [errors]="errors"></app-input-error>

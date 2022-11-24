@@ -5,15 +5,10 @@
       [value]="value"
       type="text"
       class="form-input__input"
-      [ngClass]="{ 'form-input__input--error': errors && touched }"
-      placeholder="{{ description }}"
+      [ngClass]="{ 'form-input__input--error': isValid }"
+      placeholder="{{ placeholder }}"
       (input)="onInput($event.target.value)"
-      (click)="onClicked()"
     />
     <em class="form-input__icon {{ iconClass }}"></em>
   </div>
-  <app-input-error
-    *ngIf="errors && touched"
-    [errors]="errors"
-  ></app-input-error>
 </div>

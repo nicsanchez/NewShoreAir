@@ -1,0 +1,23 @@
+<form class="travel-form" [formGroup]="travelForm">
+  <app-input
+    [data]="originInput"
+    [errors]="this.travelForm.controls['origin'].errors"
+    [touched]="this.travelForm.controls['origin'].touched"
+    formControlName="origin"
+    [isValid]="
+      this.travelForm.controls['origin'].errors &&
+      this.travelForm.controls['origin'].touched
+    "
+  ></app-input>
+  <app-input
+    [data]="destinationInput"
+    [errors]="this.travelForm.controls['destination'].errors"
+    [touched]="this.travelForm.controls['destination'].touched"
+    [isValid]="
+      this.travelForm.controls['destination'].errors &&
+      this.travelForm.controls['destination'].touched
+    "
+    formControlName="destination"
+  ></app-input>
+  <app-form-button (click)="onClickButton()"></app-form-button>
+</form>

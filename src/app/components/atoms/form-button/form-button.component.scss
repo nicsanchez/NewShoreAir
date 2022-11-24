@@ -1,0 +1,19 @@
+@import "../../../vars";
+
+.form-button {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  color: $button-color;
+
+  &__submit {
+    border: none;
+    background-color: white;
+    color: $button-color;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}
