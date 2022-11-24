@@ -1,0 +1,17 @@
+<form class="travel-form" [formGroup]="travelForm" (ngSubmit)="onClickButton()">
+  <app-form-input
+    class="travel-form__input"
+    [data]="originInput"
+    formControlName="origin"
+    [errors]="this.travelForm.controls['origin'].errors"
+    [touched]="this.travelForm.controls['origin'].touched"
+  ></app-form-input>
+  <app-form-input
+    class="travel-form__input"
+    [data]="destinationInput"
+    formControlName="destination"
+    [errors]="this.travelForm.controls['destination'].errors"
+    [touched]="this.travelForm.controls['destination'].touched"
+  ></app-form-input>
+  <input type="submit" value="Enviar" />
+</form>

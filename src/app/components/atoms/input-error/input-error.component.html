@@ -1,0 +1,9 @@
+<div class="error">
+  <p class="error__item" *ngIf="errors.required">Este campo es obligatorio.</p>
+  <p class="error__item" *ngIf="errors.maxlength">
+    Este campo no debe superar 3 caracteres.
+  </p>
+  <p class="error__item" *ngIf="errors.pattern">
+    Este campo solo admite letras mayúsculas.
+  </p>
+</div>
