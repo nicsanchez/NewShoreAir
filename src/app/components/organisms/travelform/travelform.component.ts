@@ -11,12 +11,14 @@ export class TravelformComponent implements OnInit {
   public originInput: Input = {};
   public destinationInput: Input = {};
   public travelForm: FormGroup = this.formBuilder.group({});
+  public buttonData: any;
 
   constructor(private formBuilder: FormBuilder) {}
 
   public ngOnInit() {
     this.buildForm();
-    this.setInputInformation();
+    this.setInputData();
+    this.setButtonData();
   }
 
   private buildForm() {
@@ -42,7 +44,7 @@ export class TravelformComponent implements OnInit {
     });
   }
 
-  private setInputInformation() {
+  private setInputData() {
     this.originInput = {
       title: 'Origen',
       placeholder: 'Ingrese el origen el viaje',
@@ -56,9 +58,17 @@ export class TravelformComponent implements OnInit {
     };
   }
 
-  onClickButton() { 
-    if (this.travelForm.valid) {
-      if (this.validateInputs()) {
+  private setButtonData() {
+    this.buttonData = {
+      callback: this.onClickButton,
+      reference: this,
+      text: 'Consultar',
+    };
+  }
+
+  public onClickButton(objThis: any) {
+    if (objThis.travelForm.valid) {
+      if (objThis.validateInputs()) {
         console.log('válido');
       } else {
         console.log('El origen y destino son iguales');
@@ -68,7 +78,7 @@ export class TravelformComponent implements OnInit {
     }
   }
 
-  validateInputs() {
+  public validateInputs() {
     let isValid = true;
     if (
       this.travelForm.controls['origin'].value ===

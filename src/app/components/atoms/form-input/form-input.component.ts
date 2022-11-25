@@ -15,12 +15,16 @@ export class FormInputComponent implements OnInit {
   public iconClass: string = '';
 
   ngOnInit(): void {
-    this.title = this.data.title;
-    this.placeholder = this.data.placeholder;
-    this.iconClass = this.data.iconClass;
+    this.setComponentData();
   }
 
   onInput(value: string) {
     this.value = value.toUpperCase();
+  }
+
+  private setComponentData() {
+    this.title = this.data.title;
+    this.placeholder = this.data.placeholder;
+    this.iconClass = this.data.iconClass;
   }
 }
