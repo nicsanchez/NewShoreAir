@@ -1,0 +1,10 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  &__footer {
+    margin-top: auto;
+    justify-self: flex-end;
+  }
+}

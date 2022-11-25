@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormButton } from 'src/app/models/form-button';
+import { TravelformComponent } from '../../organisms/travelform/travelform.component';
 
 @Component({
   selector: 'app-form-button',
@@ -6,9 +9,14 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./form-button.component.scss'],
 })
 export class FormButtonComponent implements OnInit {
-  @Input() data: any;
+  @Input() data: FormButton = {
+    callback: () => {},
+    reference: new TravelformComponent(new FormBuilder()),
+    text: '',
+  };
+
   public submitMethod: Function = () => {};
-  public reference: any;
+  public reference = new TravelformComponent(new FormBuilder());
   public text: string = '';
 
   ngOnInit(): void {

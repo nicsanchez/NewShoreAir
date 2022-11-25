@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormButton } from 'src/app/models/form-button';
 import { Input } from 'src/app/models/input';
 
 @Component({
@@ -8,10 +9,22 @@ import { Input } from 'src/app/models/input';
   styleUrls: ['./travelform.component.scss'],
 })
 export class TravelformComponent implements OnInit {
-  public originInput: Input = {};
-  public destinationInput: Input = {};
+  public originInput: Input = {
+    title: '',
+    placeholder: '',
+    iconClass: '',
+  };
+  public destinationInput: Input = {
+    title: '',
+    placeholder: '',
+    iconClass: '',
+  };
   public travelForm: FormGroup = this.formBuilder.group({});
-  public buttonData: any;
+  public buttonData: FormButton = {
+    callback: () => {},
+    reference: this,
+    text: '',
+  };
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -47,13 +60,13 @@ export class TravelformComponent implements OnInit {
   private setInputData() {
     this.originInput = {
       title: 'Origen',
-      placeholder: 'Ingrese el origen el viaje',
+      placeholder: 'Ingrese el origen del viaje',
       iconClass: 'form-input__icon--pin',
     };
 
     this.destinationInput = {
       title: 'Destino',
-      placeholder: 'Ingrese el destino el viaje',
+      placeholder: 'Ingrese el destino del viaje',
       iconClass: 'form-input__icon--visit',
     };
   }
@@ -66,7 +79,7 @@ export class TravelformComponent implements OnInit {
     };
   }
 
-  public onClickButton(objThis: any) {
+  public onClickButton(objThis: TravelformComponent) {
     if (objThis.travelForm.valid) {
       if (objThis.validateInputs()) {
         console.log('válido');

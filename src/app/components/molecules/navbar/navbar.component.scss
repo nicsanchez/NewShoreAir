@@ -1,0 +1,14 @@
+@import "../../../vars";
+
+.navbar {
+  display: flex;
+  padding: 1rem;
+  border: 0.1rem $dark-color;
+  border-style: none none solid none;
+
+  &__logo {
+    height: 3rem;
+    max-height: 100%;
+    content: $logo-url;
+  }
+}

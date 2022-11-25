@@ -1,0 +1,13 @@
+@import "../../../vars";
+
+.footer-contact {
+  padding: 0 1rem;
+
+  &__item {
+    color: $light-color;
+
+    &--bold {
+      font-weight: 900;
+    }
+  }
+}

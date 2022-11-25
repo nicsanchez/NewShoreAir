@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Input as CustomInput } from 'src/app/models/input';
 
 @Component({
   selector: 'app-form-input',
@@ -6,7 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./form-input.component.scss'],
 })
 export class FormInputComponent implements OnInit {
-  @Input() data: any;
+  @Input() data: CustomInput = {
+    title: '',
+    placeholder: '',
+    iconClass: '',
+  };
   @Input() value: string = '';
   @Input() isValid: boolean = false;
 
