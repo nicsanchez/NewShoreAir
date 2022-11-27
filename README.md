@@ -18,6 +18,10 @@ David Nicolás Sánchez Sendoya
 2. Node: 16.18.1
 3. typescript: 4.8.4
 
+# Ejecución del proyecto
+
+1. Ejecutar el comando en la ruta del proyecto: npm start
+
 # Conceptos Implementados
 
 1. Atomic Design
