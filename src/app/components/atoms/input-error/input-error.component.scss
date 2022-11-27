@@ -1,0 +1,13 @@
+@import "../../../vars";
+
+.error {
+  display: flex;
+  flex-direction: column;
+  margin: 0.3rem 0;
+
+  &__item {
+    color: $error-color;
+    font-size: 0.7rem;
+    margin: 0;
+  }
+}

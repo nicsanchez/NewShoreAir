@@ -1,27 +1,31 @@
 # NewShoreAir
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
+Prueba Técnica para la empresa NewShore
 
-## Development server
+# Autor
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+David Nicolás Sánchez Sendoya
 
-## Code scaffolding
+# Instalación
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Eliminar el archivo package.json
+2. Ejecutar el comando en la ruta del proyecto: npm install
+   2.1) En caso de obtenerse errores ejecutar el comando: npm install --legacy-peer-deps
 
-## Build
+# Prerequisitos
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Angular CLI: 15
+2. Node: 16.18.1
+3. typescript: 4.8.4
 
-## Running unit tests
+# Ejecución del proyecto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Ejecutar el comando en la ruta del proyecto: npm start
 
-## Running end-to-end tests
+# Conceptos Implementados
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Atomic Design
+2. Sass
+3. Redux
+4. Intercepción de respuestas
+5. HTML Semántico

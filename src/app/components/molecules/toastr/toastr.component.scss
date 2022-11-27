@@ -1,0 +1,30 @@
+@import "../../../vars";
+
+.toastr {
+  padding: 1.5rem;
+  display: flex;
+  background-color: $error-transparent-color;
+  align-items: flex-start;
+  opacity: 0;
+  transition: opacity 0.7s linear;
+  box-shadow: 0px 0px 8px 1px rgba(163, 148, 163, 1);
+
+  &__icon {
+    @extend .icon;
+    width: 3rem;
+    height: 3rem;
+    background-image: $alert-icon;
+
+    &--success {
+      background-image: $success-icon;
+    }
+  }
+
+  &--success {
+    background-color: $success-transparent-color;
+  }
+
+  &--dismiss {
+    opacity: 1;
+  }
+}

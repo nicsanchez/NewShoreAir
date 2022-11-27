@@ -1,0 +1,25 @@
+@import "../../../vars";
+
+.form-button {
+  margin: 0 0 1rem 0;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  color: $button-color;
+
+  &__submit {
+    border: none;
+    background-color: $light-color;
+    color: $button-color;
+
+    &:hover {
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
+  &__icon {
+    @extend .icon;
+    background-image: $next-icon-url;
+  }
+}

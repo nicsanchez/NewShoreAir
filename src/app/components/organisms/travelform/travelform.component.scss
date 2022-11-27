@@ -1,0 +1,14 @@
+@import "../../../vars";
+
+.travel-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+  background-color: $light-transparent-color;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 1);
+
+  &__input {
+    margin: 0 0 1rem 0;
+  }
+}

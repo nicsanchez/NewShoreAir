@@ -1,0 +1,9 @@
+<div class="route-list">
+  <h2 class="route-list__header">Número</h2>
+  <h2 class="route-list__header">Ruta</h2>
+  <h2 class="route-list__header">Subtotal</h2>
+</div>
+<app-route-item
+  *ngFor="let flight of flights"
+  [flight]="flight"
+></app-route-item>

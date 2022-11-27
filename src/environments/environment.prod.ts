@@ -1,4 +1,4 @@
 export const environment = {
-  apiURL: 'http://localhost:8000/api',
+  apiURL: 'https://recruiting-api.newshore.es/api/',
   production: true,
 };

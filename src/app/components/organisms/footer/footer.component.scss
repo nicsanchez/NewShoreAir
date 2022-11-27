@@ -1,0 +1,16 @@
+@import "../../../vars";
+
+.footer {
+  display: flex;
+  padding: 1rem;
+  background-color: $principal-color;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  &__logo {
+    height: 3rem;
+    max-height: 100%;
+    content: $reverse-logo-url;
+    margin-right: auto;
+  }
+}

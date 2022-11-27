@@ -1,0 +1,16 @@
+<div
+  class="toastr"
+  [ngClass]="{
+    'toastr--dismiss': show,
+    'toastr--success': toastrData.isSuccess
+  }"
+>
+  <em
+    class="toastr__icon"
+    [ngClass]="{ 'toastr__icon--success': toastrData.isSuccess }"
+  ></em>
+  <app-toastr-title
+    [title]="toastrData.title"
+    [description]="toastrData.description"
+  ></app-toastr-title>
+</div>

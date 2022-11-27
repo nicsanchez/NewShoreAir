@@ -1,0 +1,17 @@
+.search {
+  display: grid;
+  height: 100%;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+
+  &__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+  }
+
+  &__list {
+    @extend .search__form;
+  }
+}

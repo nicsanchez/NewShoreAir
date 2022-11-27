@@ -1,0 +1,33 @@
+@import "../../../vars";
+.item {
+  display: flex;
+  margin: 0.5rem 1rem;
+
+  &:hover {
+    background-color: $light-color;
+    border: 0.1rem $principal-color;
+    border-style: solid none solid none;
+    cursor: pointer;
+  }
+
+  &__text {
+    margin: 0.5rem 1rem;
+
+    &--bold {
+      font-weight: bold;
+    }
+  }
+
+  &__icon {
+    @extend .icon;
+
+    &--vertical-bar {
+      background-image: url("../../../../assets/icons/line.svg");
+    }
+
+    &--airplane {
+      width: 1rem;
+      background-image: url("../../../../assets/icons/airplane.svg");
+    }
+  }
+}
