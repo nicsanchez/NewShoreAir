@@ -1,9 +1,9 @@
 <div class="search">
   <div class="search__list">
     <app-route
-      *ngIf="flights.length > 0 && isValid"
+      *ngIf="routeFlight.length > 0 && showFlights"
+      [flights]="routeFlight"
       [total]="total"
-      [flights]="flights"
     ></app-route>
   </div>
   <div class="search__form">

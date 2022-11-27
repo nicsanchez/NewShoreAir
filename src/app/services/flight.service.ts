@@ -6,9 +6,12 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class FlightService {
-  constructor(private http: HttpClient) {}
+  private route: string;
+  constructor(private http: HttpClient) {
+    this.route = 'flights';
+  }
 
   public getFlights() {
-    return this.http.get(`${environment.apiURL}flights/2`);
+    return this.http.get(`${environment.apiURL}${this.route}/2`);
   }
 }

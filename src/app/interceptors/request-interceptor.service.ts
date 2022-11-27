@@ -8,7 +8,6 @@ import {
 } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { Flight } from '../models/flight';
-import { Transport } from '../models/transport';
 
 @Injectable({
   providedIn: 'root',
@@ -23,6 +22,9 @@ export class RequestInterceptorService implements HttpInterceptor {
       flightNumber: '',
     },
   };
+
+  constructor() {}
+
   intercept(
     request: HttpRequest<any>,
     next: HttpHandler
@@ -30,9 +32,11 @@ export class RequestInterceptorService implements HttpInterceptor {
     return next.handle(request).pipe(
       map((response: any) => {
         if (response instanceof HttpResponse) {
-          response = response.clone({
-            body: this.formatApiData(response.body),
-          });
+          if (response.status === 200) {
+            response = response.clone({
+              body: this.formatApiData(response.body),
+            });
+          }
         }
         return response;
       })
