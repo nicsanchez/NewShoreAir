@@ -1,0 +1,12 @@
+@import "../../../vars";
+
+.route {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $light-transparent-color;
+  padding: 0 1rem;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 1);
+  color: $button-color;
+}

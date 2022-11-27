@@ -1,0 +1,17 @@
+@import "../../../vars";
+
+.toastr-title {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    color: $light-color;
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  &__description {
+    color: $light-color;
+    font-size: 0.8rem;
+  }
+}

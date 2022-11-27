@@ -39,13 +39,10 @@
   }
 
   &__icon {
-    background-repeat: no-repeat;
+    @extend .icon;
     border: 0.1rem solid $principal-color;
     border-radius: 3%;
     padding: 0 1rem;
-    width: 5%;
-    background-position-x: center;
-    background-position-y: center;
 
     &--pin {
       background-image: $pin-icon-url;

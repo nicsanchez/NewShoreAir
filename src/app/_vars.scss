@@ -6,16 +6,30 @@
 //Icons Variables
 $pin-icon-url: url("../assets/icons/pin.svg");
 $visit-icon-url: url("../assets/icons/visit.svg");
+$next-icon-url: url("../assets/icons/next.svg");
 $reverse-logo-url: url("../assets/icons/logo-inverse.svg");
 $logo-url: url("../assets/icons/logo.svg");
+$body-image: url("../assets/images/airplane.jpg");
+$success-icon: url("../assets/icons/success-icon.svg");
+$alert-icon: url("../assets/icons/alert-icon.svg");
 
 //Colors Variables
 $principal-color: #151e3b;
 $error-color: #ff4833;
+$error-transparent-color: #ff4733bb;
 $button-color: #30a2ae;
 $light-color: white;
-$dark-color: #151e3b;
+$light-transparent-color: #ffffffde;
+$success-color: #008d4f;
+$success-transparent-color: #008d50b0;
 
 //Fonts Variables
 $font-family: "Roboto";
 $font-size: 16px;
+
+.icon {
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  width: 0.5rem;
+}

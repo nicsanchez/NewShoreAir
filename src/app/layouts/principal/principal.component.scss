@@ -1,10 +1,19 @@
+@import "../../vars";
+
 .main {
   display: flex;
   flex-direction: column;
   height: 100vh;
 
+  &__body {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../../../assets/images/airplane.jpg");
+    margin: auto 0;
+  }
+
   &__footer {
     margin-top: auto;
-    justify-self: flex-end;
   }
 }

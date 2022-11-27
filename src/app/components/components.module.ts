@@ -11,6 +11,13 @@ import { FooterTextComponent } from './atoms/footer-text/footer-text.component';
 import { FooterAddressComponent } from './atoms/footer-address/footer-address.component';
 import { FooterSectionComponent } from './molecules/footer-section/footer-section.component';
 import { FooterComponent } from './organisms/footer/footer.component';
+import { CardTitleComponent } from './atoms/card-title/card-title.component';
+import { RouteItemComponent } from './atoms/route-item/route-item.component';
+import { RouteTotalComponent } from './atoms/route-total/route-total.component';
+import { RouteComponent } from './organisms/route/route.component';
+import { RouteListComponent } from './molecules/route-list/route-list.component';
+import { ToastrTitleComponent } from './atoms/toastr-title/toastr-title.component';
+import { ToastrComponent } from './molecules/toastr/toastr.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +31,13 @@ import { FooterComponent } from './organisms/footer/footer.component';
     FooterSectionComponent,
     FooterTextComponent,
     FooterAddressComponent,
+    CardTitleComponent,
+    RouteItemComponent,
+    RouteTotalComponent,
+    RouteComponent,
+    RouteListComponent,
+    ToastrTitleComponent,
+    ToastrComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule],
   exports: [
@@ -31,6 +45,8 @@ import { FooterComponent } from './organisms/footer/footer.component';
     TravelformComponent,
     NavbarComponent,
     FooterComponent,
+    RouteComponent,
+    ToastrComponent,
   ],
 })
 export class ComponentsModule {}

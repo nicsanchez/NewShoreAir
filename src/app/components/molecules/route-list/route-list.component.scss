@@ -1,0 +1,14 @@
+@import "../../../vars";
+
+.route-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+
+  &__header {
+    font-weight: lighter;
+    color: $principal-color;
+    margin: 0;
+    font-size: 1rem;
+  }
+}

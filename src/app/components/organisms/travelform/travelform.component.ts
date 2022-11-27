@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormButton } from 'src/app/models/form-button';
 import { Input } from 'src/app/models/input';
+import { TravelForm } from 'src/app/models/travel-form';
 
 @Component({
   selector: 'app-travelform',
@@ -9,6 +10,7 @@ import { Input } from 'src/app/models/input';
   styleUrls: ['./travelform.component.scss'],
 })
 export class TravelformComponent implements OnInit {
+  public title: string = 'Buscar Vuelos';
   public originInput: Input = {
     title: '',
     placeholder: '',
@@ -19,12 +21,21 @@ export class TravelformComponent implements OnInit {
     placeholder: '',
     iconClass: '',
   };
+  public data: TravelForm = {
+    origin: '',
+    destination: '',
+    isValid: false,
+    description: '',
+  };
   public travelForm: FormGroup = this.formBuilder.group({});
   public buttonData: FormButton = {
     callback: () => {},
     reference: this,
     text: '',
   };
+
+  @Output() travelFormData: EventEmitter<TravelForm> =
+    new EventEmitter<TravelForm>();
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -80,15 +91,20 @@ export class TravelformComponent implements OnInit {
   }
 
   public onClickButton(objThis: TravelformComponent) {
+    let description: string = '';
+    let isValid: boolean = false;
     if (objThis.travelForm.valid) {
       if (objThis.validateInputs()) {
-        console.log('válido');
+        isValid = true;
+        description = 'Se ha encontrado la siguiente ruta exitosamente.';
       } else {
-        console.log('El origen y destino son iguales');
+        description = 'El origen y el destino son los mismos.';
       }
     } else {
-      console.log('no válido');
+      description = 'Ingrese información válida.';
     }
+
+    objThis.emitFormData(isValid, description);
   }
 
   public validateInputs() {
@@ -101,5 +117,14 @@ export class TravelformComponent implements OnInit {
     }
 
     return isValid;
+  }
+
+  public emitFormData(isValid: boolean, description: string) {
+    this.travelFormData.emit({
+      origin: this.travelForm.controls['origin'].value,
+      destination: this.travelForm.controls['destination'].value,
+      isValid,
+      description,
+    });
   }
 }

@@ -1,7 +1,7 @@
 @import "../../../vars";
 
 .form-button {
-  margin: 2rem 0 1rem 0;
+  margin: 0 0 1rem 0;
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -14,14 +14,12 @@
 
     &:hover {
       font-weight: bold;
+      cursor: pointer;
     }
   }
 
   &__icon {
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: center;
-    background-image: url("../../../../assets/icons/next.svg");
-    width: 0.5rem;
+    @extend .icon;
+    background-image: $next-icon-url;
   }
 }

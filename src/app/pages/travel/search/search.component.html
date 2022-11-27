@@ -1,1 +1,12 @@
-<p>search works!</p>
+<div class="search">
+  <div class="search__list">
+    <app-route
+      *ngIf="flights.length > 0 && isValid"
+      [total]="total"
+      [flights]="flights"
+    ></app-route>
+  </div>
+  <div class="search__form">
+    <app-travelform (travelFormData)="emitFormData($event)"></app-travelform>
+  </div>
+</div>
